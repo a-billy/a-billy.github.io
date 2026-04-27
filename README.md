@@ -53,68 +53,6 @@ nav a:hover{
 }
 
 /* =========================
-   漢堡選單
-========================= */
-.menu-toggle{
-  display:none;
-  flex-direction:column;
-  justify-content:center;
-  cursor:pointer;
-  width:30px;
-  height:25px;
-}
-
-.menu-toggle span{
-  height:3px;
-  background:white;
-  margin:4px 0;
-  border-radius:2px;
-  transition:0.3s;
-}
-
-/* 點擊變 X */
-.menu-toggle.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.menu-toggle.active span:nth-child(2){
-  opacity:0;
-}
-
-.menu-toggle.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* =========================
-   手機版
-========================= */
-@media(max-width:768px){
-
-  .menu-toggle{
-    display:flex;
-  }
-
-  nav ul{
-    position:absolute;
-    top:60px;
-    right:0;
-    background:#111;
-    flex-direction:column;
-    width:200px;
-    display:none;
-    padding:20px 0;
-  }
-
-  nav ul.active{
-    display:flex;
-  }
-
-  nav ul li{
-    margin:10px 0;
-  }
-}
-
-/* =========================
    首頁
 ========================= */
 header{
