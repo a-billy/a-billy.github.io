@@ -1,160 +1,45 @@
-menu-toggle{
-  display:none;
-  flex-direction:column;
-  justify-content:center;
-  cursor:pointer;
-  width:30px;
-  height:25px;
-  position:absolute;
-  right:20px;
-  top:15px;
-}
-
-.menu-toggle span{
-  display:block;
-  height:3px;
-  width:100%;
-  background:white;
-  margin:4px 0;
-  transition:0.3s;
-  border-radius:2px;
-}
-
-/* 手機版才顯示 */
-@media(max-width:768px){
-
-  .menu-toggle{
-    display:flex;
-  }
-
-  nav ul{
-    position:absolute;
-    top:60px;
-    right:0;
-    background:#111;
-    flex-direction:column;
-    width:200px;
-    display:none;
-    padding:20px 0;
-  }
-
-  nav ul.active{
-    display:flex;
-  }
-
-  nav ul li{
-    margin:10px 0;
-  }
-}
-
-/* 點擊變 X */
-.menu-toggle.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.menu-toggle.active span:nth-child(2){
-  opacity:0;
-}
-
-.menu-toggle.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>哲域設計</title>
-<link rel="stylesheet" href="style.css">
 
 <style>
+
+/* =========================
+   全域設定
+========================= */
 *{
-  margin: 0;#外距
-  padding: 0;#內距
+  margin:0;
+  padding:0;
   box-sizing:border-box;
-  font-family: "Noto Sans TC", sans-serif;#思源黑體繁中版,#無襯線字體
-  menu-toggle{
-  display:none;
-  flex-direction:column;
-  justify-content:center;
-  cursor:pointer;
-  width:30px;
-  height:25px;
-  position:absolute;
-  right:20px;
-  top:15px;
-}
-
-.menu-toggle span{
-  display:block;
-  height:3px;
-  width:100%;
-  background:white;
-  margin:4px 0;
-  transition:0.3s;
-  border-radius:2px;
-}
-
-/* 手機版才顯示 */
-@media(max-width:768px){
-
-  .menu-toggle{
-    display:flex;
-  }
-
-  nav ul{
-    position:absolute;
-    top:60px;
-    right:0;
-    background:#111;
-    flex-direction:column;
-    width:200px;
-    display:none;
-    padding:20px 0;
-  }
-
-  nav ul.active{
-    display:flex;
-  }
-
-  nav ul li{
-    margin:10px 0;
-  }
-}
-
-/* 點擊變 X */
-.menu-toggle.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.menu-toggle.active span:nth-child(2){
-  opacity:0;
-}
-
-.menu-toggle.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
+  font-family:"Noto Sans TC", sans-serif;
 }
 
 body{
   scroll-behavior:smooth;
 }
 
-/* 導覽列 */
+/* =========================
+   導覽列
+========================= */
 nav{
   position:fixed;
-  top: 0;
-  
+  top:0;
+  width:100%;
+  background:#111;
+  z-index:1000;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  padding:15px 20px;
 }
 
 nav ul{
   display:flex;
-  justify-content:flex-end;
   list-style:none;
   gap:30px;
-  padding: right 40px;
 }
 
 nav a{
@@ -167,7 +52,71 @@ nav a:hover{
   color:#00c3ff;
 }
 
-/* 首頁 */
+/* =========================
+   漢堡選單
+========================= */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  cursor:pointer;
+  width:30px;
+  height:25px;
+}
+
+.menu-toggle span{
+  height:3px;
+  background:white;
+  margin:4px 0;
+  border-radius:2px;
+  transition:0.3s;
+}
+
+/* 點擊變 X */
+.menu-toggle.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+
+.menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* =========================
+   手機版
+========================= */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  nav ul{
+    position:absolute;
+    top:60px;
+    right:0;
+    background:#111;
+    flex-direction:column;
+    width:200px;
+    display:none;
+    padding:20px 0;
+  }
+
+  nav ul.active{
+    display:flex;
+  }
+
+  nav ul li{
+    margin:10px 0;
+  }
+}
+
+/* =========================
+   首頁
+========================= */
 header{
   height:100vh;
   background:url("https://picsum.photos/1600/900") center/cover no-repeat;
@@ -176,7 +125,9 @@ header{
   align-items:center;
   color:white;
   text-align:center;
+  padding-top:60px;
 }
+
 .home-content{
   display:flex;
   flex-direction:column;
@@ -192,16 +143,9 @@ header{
   border:3px solid white;
 }
 
-header h1{
-  font-size:48px;
-}
-
-header p{
-  margin-top:10px;
-  font-size:18px;
-}
-
-/* 區塊 */
+/* =========================
+   區塊
+========================= */
 section{
   padding:80px 20px;
   text-align:center;
@@ -212,7 +156,9 @@ h2{
   font-size:28px;
 }
 
-/* 服務 */
+/* =========================
+   服務
+========================= */
 .services{
   display:flex;
   gap:20px;
@@ -225,9 +171,17 @@ h2{
   padding:20px;
   border-radius:10px;
   background:#f5f5f5;
+  transition:0.3s;
 }
 
-/* 作品 */
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   作品
+========================= */
 .portfolio{
   display:flex;
   gap:20px;
@@ -238,28 +192,40 @@ h2{
 .portfolio img{
   width:300px;
   border-radius:10px;
+  transition:0.3s;
 }
 
-/* 關於 */
+.portfolio img:hover{
+  transform:scale(1.05);
+}
+
+/* =========================
+   關於
+========================= */
 .about{
   max-width:600px;
   margin:auto;
 }
 
-/* 聯絡 */
+/* =========================
+   聯絡
+========================= */
 .contact a{
   display:inline-block;
   margin-top:10px;
   color:#00c3ff;
 }
 
-/* footer */
+/* =========================
+   footer
+========================= */
 footer{
   background:#111;
   color:white;
   text-align:center;
   padding:20px;
 }
+
 </style>
 </head>
 
@@ -267,6 +233,14 @@ footer{
 
 <!-- 導覽列 -->
 <nav>
+
+  <!-- 漢堡 -->
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
   <ul>
     <li><a href="#home">首頁</a></li>
     <li><a href="#service">服務</a></li>
@@ -278,30 +252,17 @@ footer{
 
 <!-- 首頁 -->
 <header id="home">
-  
- <div class="home-content">
-  <div class="avatar">
-    <img src="images/1415786.jpg" alt="頭像">
-  </div>
-  home-content{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+  <div class="home-content">
 
-.avatar img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:20px;
-  border:3px solid white;
-}
+    <div class="avatar">
+      <img src="images/1415786.jpg" alt="頭像">
+    </div>
 
-  <div class="text">
-    <p>一頁式設計 / 品牌形象 / 接案服務</p>
+    <div class="text">
+      <p>一頁式設計 / 品牌形象 / 接案服務</p>
+    </div>
+
   </div>
-</div>
 </header>
 
 <!-- 服務 -->
@@ -337,11 +298,10 @@ footer{
 <section id="about">
   <h2>關於我</h2>
   <div class="about">
-    <p>我是 Billy，一個喜歡把想法變成畫面的前端設計師。
-我熱衷於打造簡單但有細節的網站，
-讓每個畫面不只是好看，更是好用。
-我相信，一個好的網站，
-應該在第一眼就抓住人心。</p>
+    <p>
+      我是 Billy，一個喜歡把想法變成畫面的前端設計師。<br>
+      我熱衷於打造簡單但有細節的網站，讓畫面更有質感。
+    </p>
   </div>
 </section>
 
@@ -355,6 +315,21 @@ footer{
   </div>
 </section>
 
-<!-- Footer -->
+<!-- footer -->
 <footer>
   <p>© 2026 哲域設計</p>
+</footer>
+
+<!-- JS -->
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector("nav ul");
+
+toggle.addEventListener("click", () => {
+  toggle.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
