@@ -7,9 +7,7 @@
 
 <style>
 
-/* =========================
-   全域設定
-========================= */
+
 *{
   margin:0;
   padding:0;
@@ -21,20 +19,22 @@ body{
   scroll-behavior:smooth;
 }
 
-/* =========================
-   導覽列
-========================= */
 nav{
   position:fixed;
   top:0;
   width:100%;
-  background:hwb(0 47% 52%);
+  background:#777;
   z-index:1000;
   display:flex;
   justify-content:flex-end;
   align-items:center;
   padding:15px 20px;
 }
+ 
+  nav a:hover{
+    color:#ff4d4d;
+  }
+
 
 nav ul{
   display:flex;
@@ -52,12 +52,10 @@ nav a:hover{
   color:oklch(61.173% 0.24739 28.899);
 }
 
-/* =========================
-   首頁
-========================= */
+
 header{
   height:100vh;
-  background:url("717-300x200.jpg") center/cover no-repeat;
+  background:url("./717-300x200.jpg")center/cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -81,9 +79,7 @@ header{
   border:3px solid white;
 }
 
-/* =========================
-   區塊
-========================= */
+
 section{
   padding:80px 20px;
   text-align:center;
@@ -94,9 +90,7 @@ h2{
   font-size:28px;
 }
 
-/* =========================
-   服務
-========================= */
+
 .services{
   display:flex;
   gap:20px;
@@ -117,9 +111,6 @@ h2{
   box-shadow:0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* =========================
-   作品
-========================= */
 .portfolio{
   display:flex;
   gap:20px;
@@ -137,26 +128,19 @@ h2{
   transform:scale(1.05);
 }
 
-/* =========================
-   關於
-========================= */
+
 .about{
   max-width:600px;
   margin:auto;
 }
 
-/* =========================
-   聯絡
-========================= */
+
 .contact a{
   display:inline-block;
   margin-top:10px;
   color:#00c3ff;
 }
 
-/* =========================
-   footer
-========================= */
 footer{
   background:#111;
   color:white;
@@ -169,7 +153,7 @@ footer{
 
 <body>
 
-<!-- 導覽列 -->
+
 <nav>
 
    <ul>
@@ -181,12 +165,12 @@ footer{
    </ul>
  </nav>
 
-<!-- 首頁 -->
+
 <header id="home">
   <div class="home-content">
 
     <div class="avatar">
-      <img src="images/1415786.jpg" alt="頭像">
+      <img src="./images/1415786.jpg" alt="頭像">
     </div>
 
     <div class="text">
@@ -196,7 +180,6 @@ footer{
   </div>
 </header>
 
-<!-- 服務 -->
 <section id="service">
   <h2>服務項目</h2>
   <div class="services">
@@ -215,7 +198,6 @@ footer{
   </div>
 </section>
 
-<!-- 作品 -->
 <section id="portfolio">
   <h2>作品展示</h2>
   <div class="portfolio">
@@ -225,7 +207,7 @@ footer{
   </div>
 </section>
 
-<!-- 關於 -->
+
 <section id="about">
   <h2>關於我</h2>
   <div class="about">
@@ -236,7 +218,7 @@ footer{
   </div>
 </section>
 
-<!-- 聯絡 -->
+
 <section id="contact">
   <h2>聯絡我</h2>
   <div class="contact">
@@ -250,17 +232,6 @@ footer{
 <footer>
   <p>© 2026 哲域設計</p>
 </footer>
-
-<!-- JS -->
-<script>
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector("nav ul");
-
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("active");
-  menu.classList.toggle("active");
-});
-</script>
 
 </body>
 </html>
