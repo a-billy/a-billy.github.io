@@ -28,7 +28,7 @@ nav{
   position:fixed;
   top:0;
   width:100%;
-  background:#111;
+  background:hwb(0 47% 52%);
   z-index:1000;
   display:flex;
   justify-content:flex-end;
@@ -39,17 +39,17 @@ nav{
 nav ul{
   display:flex;
   list-style:none;
-  gap:30px;
+  gap:25px;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  font-size:16px;
+  font-size:20px;
 }
 
 nav a:hover{
-  color:#00c3ff;
+  color:oklch(61.173% 0.24739 28.899);
 }
 
 /* =========================
@@ -57,7 +57,7 @@ nav a:hover{
 ========================= */
 header{
   height:100vh;
-  background:url("https://picsum.photos/1600/900") center/cover no-repeat;
+  background:url("717-300x200.jpg") center/cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -172,21 +172,14 @@ footer{
 <!-- 導覽列 -->
 <nav>
 
-  <!-- 漢堡 -->
-  <div class="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <ul>
+   <ul>
     <li><a href="#home">首頁</a></li>
     <li><a href="#service">服務</a></li>
     <li><a href="#portfolio">作品</a></li>
     <li><a href="#about">關於我</a></li>
-    <li><a href="#contact">聯絡</a></li>
-  </ul>
-</nav>
+    <li><a href="#contact">聯絡我</a></li>
+   </ul>
+ </nav>
 
 <!-- 首頁 -->
 <header id="home">
@@ -248,8 +241,8 @@ footer{
   <h2>聯絡我</h2>
   <div class="contact">
     <p>Email：a0965424388@gmail.com</p>
-    <p>LINE：0965424388</p>
-    <a href="#">立即詢問</a>
+      <p>LINE：0965424388</p>
+        <a href="#">立即詢問</a>
   </div>
 </section>
 
