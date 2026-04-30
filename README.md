@@ -48,10 +48,6 @@ nav a{
   font-size:20px;
 }
 
-nav a:hover{
-  color:oklch(61.173% 0.24739 28.899);
-}
-
 
 header{
   height:100vh;
